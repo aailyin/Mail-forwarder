@@ -4,9 +4,65 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>mail-forwarder</groupId>
-    <artifactId>mail-forwarder</artifactId>
+    <groupId>com.exadel</groupId>
+    <artifactId>Mail-Forwarder</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>Mail-Forwarder</name>
+    <packaging>war</packaging>
+    <url>http://maven.apache.org</url>
 
-    
+    <repositories>
+        <repository>
+            <id>java.net.m2</id>
+            <url>http://download.java.net/maven/2</url>
+        </repository>
+    </repositories>
+
+    <properties>
+        <spring.version>3.1.2.RELEASE</spring.version>
+        <junit.version>4.11</junit.version>
+        <jdk.version>1.6</jdk.version>
+        <sourceEncoding>UTF-8</sourceEncoding>
+    </properties>
+
+    <dependencies>
+<!--        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>MailForwarder</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                    <encoding>${sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>

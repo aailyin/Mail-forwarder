@@ -13,6 +13,7 @@ import java.util.Arrays;
  * @author aa.ilyin
  */
 @Controller
+@RequestMapping("/MailForwarder")
 public class BaseController {
 
     @Autowired
@@ -21,7 +22,7 @@ public class BaseController {
     @Autowired
     private SimpleMailMessage mailMessage;
 
-    @RequestMapping("/")
+    @RequestMapping("/index")
     public String sendMail(ModelMap modelMap){
         mailService.sendMail(mailMessage.getFrom(),
                              Arrays.toString(mailMessage.getTo()),

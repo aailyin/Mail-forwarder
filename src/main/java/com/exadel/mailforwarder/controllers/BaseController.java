@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.Arrays;
 
 /**
+ * Base controller for application. Handles requests for URI '/MailForwarder'
+ *
  * @author aa.ilyin
  */
 @Controller
@@ -24,6 +26,13 @@ public class BaseController {
 
     public BaseController(){}
 
+
+    /**
+     * Method handles the requests for URI '/index'. Returns the string
+     * "E-mail was sent" if it works correctly.
+     *
+     * @param modelMap - map for page
+    */
     @RequestMapping("/index")
     public String sendMail(ModelMap modelMap){
         StringBuilder builder = new StringBuilder();

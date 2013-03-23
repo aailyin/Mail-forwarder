@@ -7,6 +7,8 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Service;
 
 /**
+ * Implementation of interface MailService.
+ *
  * @author aa.ilyin
  */
 @Service("mailService")
@@ -17,6 +19,14 @@ public class MailServiceImpl implements MailService {
 
     public MailServiceImpl(){}
 
+    /**
+     * Method sends the e-mail to the specified address.
+     *
+     * @param from - what from address to send
+     * @param to - whom to send
+     * @param subject - subject of message
+     * @param body - body of message
+    */
     @Override
     public void sendMail(String from, String to, String subject, String body) {
         SimpleMailMessage message = new SimpleMailMessage();

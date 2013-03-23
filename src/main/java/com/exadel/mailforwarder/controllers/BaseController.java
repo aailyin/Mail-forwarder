@@ -22,10 +22,16 @@ public class BaseController {
     @Autowired
     private SimpleMailMessage mailMessage;
 
+    public BaseController(){}
+
     @RequestMapping("/index")
     public String sendMail(ModelMap modelMap){
+        StringBuilder builder = new StringBuilder();
+        for(String s : mailMessage.getTo()) {
+            builder.append(s);
+        }
         mailService.sendMail(mailMessage.getFrom(),
-                             Arrays.toString(mailMessage.getTo()),
+                             builder.toString(),
                              mailMessage.getSubject(),
                              mailMessage.getText());
         modelMap.addAttribute("message", "E-mail was sent");

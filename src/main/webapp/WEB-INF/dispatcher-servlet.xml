@@ -21,8 +21,8 @@
 
     <!--Properties for the message that will be send-->
     <bean id="mailMessage" class="org.springframework.mail.SimpleMailMessage">
-        <property name="from" value="antonaleksei.ilyin@gmail.com"/>
-        <property name="to" value='antonaleksei.ilyin@gmail.com'/>
+        <property name="from" value="recipient.username@gmail.com"/>
+        <property name="to" value='recipient.username@gmail.com'/>
         <property name="subject" value="E-mail was been send from test application"/>
         <property name="text" value="Success"/>
     </bean>
@@ -31,8 +31,8 @@
     <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
         <property name="host" value="smtp.gmail.com"/>
         <property name="port" value="25"/>
-        <property name="username" value="antonaleksei.ilyin@gmail.com"/>
-        <property name="password" value="My BeLLa1"/>
+        <property name="username" value="sender.username@gmail.com"/>
+        <property name="password" value="sender.password"/>
         <property name="javaMailProperties">
             <props>
                 <prop key="mail.transport.protocol">smtp</prop>
